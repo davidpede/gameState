@@ -31,10 +31,10 @@ fclose($fileB);
 
 foreach ($matches as $key => $match) {
   foreach ($goals as $goal) {
-    if ($match[6] === $goal[5] && $match[1] === $goal[1]) { //
-      $fthgt = $goal[3];
-      $ftagt = $goal[2];
-      $date = date("d/m/y", strtotime($goal[0]));
+    if ($match[6] === $goal[7] && $match[1] === $goal[8]) { //
+      $fthgt = $goal[11];
+      $ftagt = $goal[12];
+      $date = date("d/m/y", strtotime($goal[6]));
     }
   }
   $array[$key][season] = $season;
@@ -43,10 +43,10 @@ foreach ($matches as $key => $match) {
   $array[$key][away] = $match[1];
   $array[$key][fthg] = $match[5];
   $array[$key][fthgt] = str_replace(';','',$fthgt);
-  $array[$key][ftag] = $match[9];
+  $array[$key][ftag] = $match[3];
   $array[$key][ftagt] = str_replace(';','',$ftagt);
-  $array[$key][hthg] = $match[10];
-  $array[$key][htag] = $match[11];
+  $array[$key][hthg] = $match[4];
+  $array[$key][htag] = $match[2];
 }
 
 unset($array[0]);
